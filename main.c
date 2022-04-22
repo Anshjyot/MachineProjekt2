@@ -1,15 +1,35 @@
 #include <stdio.h>
+int cardDeck[52];
+int deckSize = 52;
+
+/*typedef struct node{
+
+    char faceValue[3];
+    char suit[10];
+    struct node * next;
+
+}; card; */
+
+void LD(char file[]){
+
+    FILE *filePointer;
+    filePointer = fopen (file,"r");
+
+    if(!filePointer){
+        printf("Wrong file\n");
+    }
+
+    for (int i = 0; i < deckSize ; ++i) {
+
+        fscanf(filePointer,"%c\n",&cardDeck[i]);
+        printf("%c\n", cardDeck[i]);
+
+    }
+
+}
 
 void main() {
-    printf("\tC1\tC2\tC3\tC4\tC5\tC6\tC7\n\n");
-    printf("\t[]\t[]\t[]\t[]\t[]\t[]\t[]\t\t[]\tF1\n");
-    printf("\t[]\t[]\t[]\t[]\t[]\t[]\t[]\t\t[]\tF2\n");
-    printf("\t[]\t[]\t[]\t[]\t[]\t[]\t[]\t\t[]\tF3\n");
-    printf("\t[]\t[]\t[]\t[]\t[]\t[]\t[]\t\t[]\tF4\n");
-    printf("\t[]\t[]\t[]\t[]\t[]\t[]\t[]\n");
-    printf("\t[]\t[]\t[]\t[]\t[]\t[]\t[]\n");
-    printf("\t[]\t[]\t[]\n");
 
-
+    LD("CardDeck.txt");
 
 }
