@@ -79,5 +79,6 @@ void LD(char file[]){
 void main() {
 
     LD("CardDeck.txt");
+    // hej
 
 }
